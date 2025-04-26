@@ -1,0 +1,10 @@
+from fastapi import FastAPI
+from .themes import theme_01
+
+app = FastAPI()
+
+app.include_router(theme_01.router, prefix="/themes")
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}
