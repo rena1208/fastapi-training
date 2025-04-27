@@ -4,6 +4,7 @@ from pydantic import BaseModel
 
 router = APIRouter()
 
+# レスポンスの型
 class TimeResponse(BaseModel):
     time: datetime
 
