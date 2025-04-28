@@ -1,13 +1,13 @@
 from fastapi import FastAPI
 
-from .themes import theme_01, theme_02, theme_03, theme_04
+from .themes import analyze_geojson, get_fibonacci, present_time, random_tile
 
 app = FastAPI()
 
-app.include_router(theme_01.router, prefix="/themes")
-app.include_router(theme_02.router, prefix="/themes")
-app.include_router(theme_03.router, prefix="/themes")
-app.include_router(theme_04.router, prefix="/themes")
+app.include_router(present_time.router, prefix="/themes")
+app.include_router(get_fibonacci.router, prefix="/themes")
+app.include_router(random_tile.router, prefix="/themes")
+app.include_router(analyze_geojson.router, prefix="/themes")
 
 @app.get("/health")
 def health():
